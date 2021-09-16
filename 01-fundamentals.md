@@ -26,7 +26,7 @@ order to get out of there, you should type the `q` key on your keyboard.
 The latter will print some information in a much compact way, including
 the most important options.
 
-## Location location location
+## Location location location: Moving around
 
 The first thing you need to know is to be aware in which part of your
 system you are currently located at. For that, we use the `pwd` command
@@ -58,6 +58,80 @@ we could have simply typed
 cd dir1
 ```
 
-## Creating directories
+## What’s in here?: Listing files
+
+Within any folder–for which you have the permission to see–you can list
+files and folders using the `ls` command. By itself, we would be listing
+objects within the current directory (`pwd`), e.g.,
+
+``` bash
+ls
+```
+
+    ## 01-fundamentals.Rmd
+    ## 02-git.Rmd
+    ## README.md
+
+Otherwise, we can be explicit regarding what folder we want to
+investigate, for example
+
+``` bash
+ls /home/george/sources
+```
+
+    ## 01-fundamentals.Rmd
+    ## 02-git.Rmd
+    ## README.md
+
+If the number of files is not that big, then this would usually be OK.
+Nonetheless, it is easier to list one element per line using the `-l`
+flag:
+
+``` bash
+ls -l /home/george/sources
+```
+
+    ## total 12
+    ## -rw-rw-r-- 1 root root 3315 Sep 16 20:40 01-fundamentals.Rmd
+    ## -rw-rw-r-- 1 root root 2251 Sep 16 20:24 02-git.Rmd
+    ## -rw-rw-r-- 1 root root  188 Sep 16 20:21 README.md
+
+## Creating and deleting directories
+
+Directories can be created from anywhere to anywhere within the system
+with the `mkdir` command. For example, from the `/home/` directory, we
+can create a folder named `my-project-1` in `/home/` using either
+relative or absolute paths:
+
+``` bash
+# Making sure we are at home!
+pwd
+
+# Creating the subdir
+mkdir my-project-1
+```
+
+    ## /home
+
+Or, the following would also work
+
+``` bash
+mkdir /home/my-project-1/
+```
+
+What about creating nested folders? Well, if that’s the case, we can use
+the `-p` flag (parents) to create any missing directory. Suppose we’d
+like to create a directory under `/home/my-labs/lab1`. If
+`/home/my-labs` does not exists, the following would fail:
+
+``` bash
+mkdir /home/my-labs/lab1
+```
+
+To make it work, we would need to add the `-p` flag:
+
+``` bash
+mkdir -p /home/my-labs/lab1
+```
 
 ## Moving, deleting, and renaming files
