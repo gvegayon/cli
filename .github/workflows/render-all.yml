@@ -13,10 +13,7 @@ jobs:
         run: docker pull rocker/tidyverse:4.1.0
 
       - name: Rendering
-        run: |
-          docker run --rm -i -v ${PWD}:/home/r -w /home/r rocker/tidyverse:4.1.0 Rscript \
-            -e 'sapply(list.files("sources/", full.names=TRUE, pattern = "*.Rmd"), rmarkdown::render)'
-          mv sources/*.md .
+        run: make
  
       - name: Commit results
         run: |
