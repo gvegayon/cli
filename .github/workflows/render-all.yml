@@ -15,7 +15,7 @@ jobs:
       - name: Rendering
         run: |
           docker run --rm -i -v ${PWD}:/home/r -w /home/r rocker/tidyverse:4.1.0 Rscript \
-            -e 'sapply(list.files("sources/", full.path=TRUE), rmarkdown::render)'
+            -e 'sapply(list.files("sources/", full.names=TRUE), rmarkdown::render)'
           mv sources/*.md .
  
       - name: Commit results
