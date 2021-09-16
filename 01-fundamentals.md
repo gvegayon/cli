@@ -92,9 +92,23 @@ ls -l /home/george/sources
 ```
 
     ## total 12
-    ## -rw-rw-r-- 1 root root 3315 Sep 16 20:40 01-fundamentals.Rmd
-    ## -rw-rw-r-- 1 root root 2251 Sep 16 20:24 02-git.Rmd
-    ## -rw-rw-r-- 1 root root  188 Sep 16 20:21 README.md
+    ## -rw-r--r-- 1 1001 121 3571 Sep 16 20:45 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2251 Sep 16 20:45 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121  188 Sep 16 20:45 README.md
+
+Personally, I like listing files by timestamp and adding the `-t` flag,
+and make the size of the files “human-readable” with the `-h` flag:
+
+``` bash
+ls -lth /home/george/sources
+```
+
+    ## total 12K
+    ## -rw-r--r-- 1 1001 121 3.5K Sep 16 20:45 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2.2K Sep 16 20:45 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121  188 Sep 16 20:45 README.md
+
+That way the most recently modified elements will show up on the top.
 
 ## Creating and deleting directories
 
