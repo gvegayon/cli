@@ -75,7 +75,7 @@ Once we are done adding files, we can proceed with the commit using
 git commit -m "My first commit."
 ```
 
-    ## [master (root-commit) d8da017] My first commit.
+    ## [master (root-commit) 38f784a] My first commit.
     ##  1 file changed, 1 insertion(+)
     ##  create mode 100644 README.md
 
