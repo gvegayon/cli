@@ -1,0 +1,28 @@
+name: Render Rmd files
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: Ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Container
+        run: docker pull rocker/tidyverse:4.1.0
+
+      - name: Rendering
+        run: |
+          docker run --rm -i -v ${PWD}:/home/r -w /home/r rocker/tidyverse:4.1.0 Rscript \
+            -e 'sapply(list.files("sources/", full.path=TRUE), rmarkdown::render)'
+          mv sources/*.md .
+ 
+      - name: Commit results
+        run: |
+          git add *.md
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git commit -a -m 'Re-build Rmarkdown files' || echo Nothing has changed
+          git push origin || echo "No changes to commit"
+ 
