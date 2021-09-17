@@ -1,0 +1,106 @@
+---
+output:
+    github_document:
+        html_preview: false
+---
+
+# Using R in the console
+
+Most of the time, you will be using R through an IDE as RStudio or Jupyter
+Notebooks. Nonetheless, fancy point-and-click user interfaces are not always
+available, especially when working with a cluster or a remote server.
+In those cases, knowing how to use R in the command-line becomes fundamental.
+
+```{bash, include=FALSE}
+mkdir /home/reports
+cd /home/reports
+echo "library(MASS)" > long-job.R
+echo "for (i in 1:10) {" >> long-job.R
+echo "  Sys.sleep(.5)" >> long-job.R
+echo "  message(\"Step \", i)" >> long-job.R
+echo "}" >> long-job.R
+echo "message(\"Complete\")" >> long-job.R
+```
+
+```{r, include=FALSE}
+knitr::opts_knit$set(root.dir = '/home/reports', comment = '')
+```
+
+```{bash, include=FALSE}
+echo "---" > report1.Rmd
+echo "output: md_document" >> report1.Rmd
+echo "---" >> report1.Rmd
+echo "## Header 1" >> report1.Rmd
+echo " " >> report1.Rmd
+echo "R can be used as calculator" >> report1.Rmd
+echo " " >> report1.Rmd
+echo "```{r}" >> report1.Rmd
+echo "sqrt(1 + pi)" >> report1.Rmd
+echo "```" >> report1.Rmd
+```
+
+
+## Quick R calls
+
+Many times, we don't need to have a full script to execute, but rather
+a single command that needs to be run. For example, RMarkdown files can
+be compiled simply using the `rmarkdown::render()` function. For that and
+other cases, we can use `Rscript` to run R on the fly. A couple of
+examples:
+
+1. Using R as a calculator:
+
+    ```{bash}
+    Rscript -e 'sqrt(pi + 100)'
+    ```
+
+2. Render the RMarkdown document `/home/reports/report1.Rmd`:
+
+    ```{bash}
+    Rscript -e 'rmarkdown::render("/home/reports/report1.Rmd")'
+    ```
+
+Rscript is ideal to be used with bash scripts, for example, when submitting a job to a 
+cluster like Slurm. The bash file in that case would be something like
+
+```bash
+#!/bin/bash
+#SBATCH --name=My-R-job
+#SBATCH --time=01:00:00
+
+# If your Cluster works with modules
+module load r
+
+# Running the R script
+Rscript /path/to/the/job.R
+```
+
+## Batch jobs
+
+Long jobs can be run in [batch-mode](https://en.wikipedia.org/wiki/Batch_processing), i.e.,
+without you needing to be there. In that case, `R CMD BATCH` is the right approach
+to follow. Here is an example:
+
+We have an R script that will take a while to complete. So, instead of
+initializing an R session or using some IDE, we could simple submit the job
+using `R CMD BATCH`. Here is the R script we'd like to run:
+
+```{bash}
+cat long-job.R
+```
+
+And this is how we execute it using `R CMD BATCH`. 
+
+```{bash}
+R CMD BATCH long-job.R long-job.Rout &
+```
+
+The first filename is the name--actually path--of the script to execute. The
+second filename is log-file where R will print out the results. Finally, the
+ampersand is to finalize the submittion, after which the operating system
+will print the ID number of the process. Here are the results:
+
+```{bash}
+cat long-job.Rout
+```
+

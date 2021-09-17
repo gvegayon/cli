@@ -10,6 +10,8 @@ Knowing how to use the [**command-line interface (CLI)**](https://en.wikipedia.o
 
 2. Git ([link](02-git.md))
 
+3. R ([link](03-r.md))
+
 
 ## Other CLI cheat sheets
 
