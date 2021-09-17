@@ -72,7 +72,6 @@ ls
     ## 02-git.Rmd
     ## 03-r.Rmd
     ## README.md
-    ## report1.Rmd
 
 Otherwise, we can be explicit regarding what folder we want to
 investigate, for example
@@ -85,7 +84,6 @@ ls /home/george/sources
     ## 02-git.Rmd
     ## 03-r.Rmd
     ## README.md
-    ## report1.Rmd
 
 If the number of files is not that big, then this would usually be OK.
 Nonetheless, it is easier to list one element per line using the `-l`
@@ -95,12 +93,11 @@ flag:
 ls -l /home/george/sources
 ```
 
-    ## total 20
-    ## -rw-rw-r-- 1 root root 3571 Sep 16 20:44 01-fundamentals.Rmd
-    ## -rw-rw-r-- 1 root root 2251 Sep 16 20:24 02-git.Rmd
-    ## -rw-rw-r-- 1 root root 2892 Sep 17 21:54 03-r.Rmd
-    ## -rw-rw-r-- 1 root root  188 Sep 16 20:21 README.md
-    ## -rw-r--r-- 1 root root   71 Sep 17 21:38 report1.Rmd
+    ## total 16
+    ## -rw-r--r-- 1 1001 121 3571 Sep 17 21:57 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2251 Sep 17 21:57 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121 2892 Sep 17 21:57 03-r.Rmd
+    ## -rw-r--r-- 1 1001 121  188 Sep 17 21:57 README.md
 
 Personally, I like listing files by timestamp and adding the `-t` flag,
 and make the size of the files “human-readable” with the `-h` flag:
@@ -109,12 +106,11 @@ and make the size of the files “human-readable” with the `-h` flag:
 ls -lth /home/george/sources
 ```
 
-    ## total 20K
-    ## -rw-rw-r-- 1 root root 2.9K Sep 17 21:54 03-r.Rmd
-    ## -rw-r--r-- 1 root root   71 Sep 17 21:38 report1.Rmd
-    ## -rw-rw-r-- 1 root root 3.5K Sep 16 20:44 01-fundamentals.Rmd
-    ## -rw-rw-r-- 1 root root 2.2K Sep 16 20:24 02-git.Rmd
-    ## -rw-rw-r-- 1 root root  188 Sep 16 20:21 README.md
+    ## total 16K
+    ## -rw-r--r-- 1 1001 121  188 Sep 17 21:57 README.md
+    ## -rw-r--r-- 1 1001 121 3.5K Sep 17 21:57 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2.2K Sep 17 21:57 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121 2.9K Sep 17 21:57 03-r.Rmd
 
 That way the most recently modified elements will show up on the top.
 
