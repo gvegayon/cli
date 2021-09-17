@@ -98,7 +98,7 @@ ls -l /home/george/sources
     ## total 20
     ## -rw-rw-r-- 1 root root 3571 Sep 16 20:44 01-fundamentals.Rmd
     ## -rw-rw-r-- 1 root root 2251 Sep 16 20:24 02-git.Rmd
-    ## -rw-rw-r-- 1 root root 2892 Sep 17 21:52 03-r.Rmd
+    ## -rw-rw-r-- 1 root root 2892 Sep 17 21:54 03-r.Rmd
     ## -rw-rw-r-- 1 root root  188 Sep 16 20:21 README.md
     ## -rw-r--r-- 1 root root   71 Sep 17 21:38 report1.Rmd
 
@@ -110,7 +110,7 @@ ls -lth /home/george/sources
 ```
 
     ## total 20K
-    ## -rw-rw-r-- 1 root root 2.9K Sep 17 21:52 03-r.Rmd
+    ## -rw-rw-r-- 1 root root 2.9K Sep 17 21:54 03-r.Rmd
     ## -rw-r--r-- 1 root root   71 Sep 17 21:38 report1.Rmd
     ## -rw-rw-r-- 1 root root 3.5K Sep 16 20:44 01-fundamentals.Rmd
     ## -rw-rw-r-- 1 root root 2.2K Sep 16 20:24 02-git.Rmd
