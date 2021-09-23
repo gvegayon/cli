@@ -75,7 +75,7 @@ Once we are done adding files, we can proceed with the commit using
 git commit -m "My first commit."
 ```
 
-    ## [master (root-commit) 468a325] My first commit.
+    ## [master (root-commit) de5af9e] My first commit.
     ##  1 file changed, 1 insertion(+)
     ##  create mode 100644 README.md
 
@@ -132,7 +132,7 @@ git commit -a -m "Improving the README file"
 git status
 ```
 
-    ## [master 947cfe7] Improving the README file
+    ## [master 7f2fde8] Improving the README file
     ##  1 file changed, 2 insertions(+)
     ## On branch master
     ## nothing to commit, working tree clean

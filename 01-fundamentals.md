@@ -9,9 +9,9 @@ and managing folders and files.
 The first, most important thing you should know is how to ask for help.
 Beyond googling–or [duckduckgoing](https://duckduckgo.com)–or looking
 for answers in [StackOverflow](https://stackoverflow.com), you should
-know that most commands have their own documentation which can be
-accessed using the `man` command, or, if available, calling the function
-with the `-h` or `--help` flags. Here are two examples:
+know that most commands have their documentation which can be accessed
+using the `man` command, or, if available, calling the function with the
+`-h` or `--help` flags. Here are two examples:
 
 ``` bash
 # Manual of the cd command
@@ -93,24 +93,24 @@ flag:
 ls -l /home/george/sources
 ```
 
-    ## total 16
-    ## -rw-r--r-- 1 1001 121 3571 Sep 17 21:57 01-fundamentals.Rmd
-    ## -rw-r--r-- 1 1001 121 2251 Sep 17 21:57 02-git.Rmd
-    ## -rw-r--r-- 1 1001 121 2892 Sep 17 21:57 03-r.Rmd
-    ## -rw-r--r-- 1 1001 121  188 Sep 17 21:57 README.md
+    ## total 20
+    ## -rw-r--r-- 1 1001 121 4684 Sep 23 22:05 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2251 Sep 23 22:05 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121 2892 Sep 23 22:05 03-r.Rmd
+    ## -rw-r--r-- 1 1001 121  188 Sep 23 22:05 README.md
 
-Personally, I like listing files by timestamp and adding the `-t` flag,
-and make the size of the files “human-readable” with the `-h` flag:
+I like listing files by timestamp and adding the `-t` flag, and make the
+size of the files “human-readable” with the `-h` flag:
 
 ``` bash
 ls -lth /home/george/sources
 ```
 
-    ## total 16K
-    ## -rw-r--r-- 1 1001 121  188 Sep 17 21:57 README.md
-    ## -rw-r--r-- 1 1001 121 3.5K Sep 17 21:57 01-fundamentals.Rmd
-    ## -rw-r--r-- 1 1001 121 2.2K Sep 17 21:57 02-git.Rmd
-    ## -rw-r--r-- 1 1001 121 2.9K Sep 17 21:57 03-r.Rmd
+    ## total 20K
+    ## -rw-r--r-- 1 1001 121 4.6K Sep 23 22:05 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2.2K Sep 23 22:05 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121 2.9K Sep 23 22:05 03-r.Rmd
+    ## -rw-r--r-- 1 1001 121  188 Sep 23 22:05 README.md
 
 That way the most recently modified elements will show up on the top.
 
@@ -152,4 +152,38 @@ To make it work, we would need to add the `-p` flag:
 mkdir -p /home/my-labs/lab1
 ```
 
-## Moving, deleting, and renaming files
+## Deleting, moving, and renaming files and folders
+
+Deleting one or multiple files at the same time is another common task.
+To delete files, we can use the `rm` (remove) function. Imagine we want
+to remove a file located at `/home/my-labs/lab1/output.txt`. Either of
+the following would work
+
+``` bash
+# Using absolute path
+rm /home/my-labs/lab1/output.txt
+
+# Using relative path, assuming we are located at /home/my-labs/lab1
+rm output.txt
+```
+
+If, instead, we wish to remove a *pattern* of files located at
+`/home/my-labs/lab1`, in particular, `output1.txt`, `output2.txt`, etc.,
+we could do it using the following command:
+
+``` bash
+rm /home/my-labs/lab1/output*.txt
+```
+
+In the case of folders, `rm` can also be used to delete them. Although
+the command `rmdir` also deletes folders; it only removes empty
+directories, whereas `rm` can remove empty and non-empty directories. If
+we try to remove a non-empty directory with `rm`, e.g.,
+`rm /home/my-labs/`, we would get an error as the folder isn’t empty.
+Instead, we’d need to use the `-f`–force–and `-r`–recursive–flags:
+
+``` bash
+rm -rf /home/my-labs/
+```
+
+That would delete the entire `my-labs` folder.
