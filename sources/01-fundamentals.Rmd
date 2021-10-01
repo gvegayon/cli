@@ -4,6 +4,7 @@ output:
         html_preview: false
 ---
 
+
 # Fundamentals
 
 Here are some day to day operations related to navigating your computer and

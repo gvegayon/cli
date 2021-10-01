@@ -7,7 +7,7 @@ directories:
 
 compile:
 	docker run --rm -i -v ${PWD}:/home/george -w /home/george rocker/tidyverse:4.1.0 Rscript \
-		-e 'setwd("sources");sapply(list.files(".", full.names=TRUE, pattern = "*.Rmd"), rmarkdown::render, output_dir = "..")' 
+		--vanilla make.R
 		
 
 clean:
