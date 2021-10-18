@@ -71,6 +71,7 @@ ls
     ## 01-fundamentals.Rmd
     ## 02-git.Rmd
     ## 03-r.Rmd
+    ## 04-users.Rmd
     ## README.md
 
 Otherwise, we can be explicit regarding what folder we want to
@@ -83,6 +84,7 @@ ls /home/george/sources
     ## 01-fundamentals.Rmd
     ## 02-git.Rmd
     ## 03-r.Rmd
+    ## 04-users.Rmd
     ## README.md
 
 If the number of files is not that big, then this would usually be OK.
@@ -93,11 +95,12 @@ flag:
 ls -l /home/george/sources
 ```
 
-    ## total 20
-    ## -rw-r--r-- 1 1001 121 4684 Sep 23 22:05 01-fundamentals.Rmd
-    ## -rw-r--r-- 1 1001 121 2251 Sep 23 22:05 02-git.Rmd
-    ## -rw-r--r-- 1 1001 121 2892 Sep 23 22:05 03-r.Rmd
-    ## -rw-r--r-- 1 1001 121  188 Sep 23 22:05 README.md
+    ## total 24
+    ## -rw-r--r-- 1 1001 121 4685 Oct 18 21:58 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2251 Oct 18 21:58 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121 2892 Oct 18 21:58 03-r.Rmd
+    ## -rw-r--r-- 1 1001 121 2000 Oct 18 21:58 04-users.Rmd
+    ## -rw-r--r-- 1 1001 121  188 Oct 18 21:58 README.md
 
 I like listing files by timestamp and adding the `-t` flag, and make the
 size of the files “human-readable” with the `-h` flag:
@@ -106,11 +109,12 @@ size of the files “human-readable” with the `-h` flag:
 ls -lth /home/george/sources
 ```
 
-    ## total 20K
-    ## -rw-r--r-- 1 1001 121 4.6K Sep 23 22:05 01-fundamentals.Rmd
-    ## -rw-r--r-- 1 1001 121 2.2K Sep 23 22:05 02-git.Rmd
-    ## -rw-r--r-- 1 1001 121 2.9K Sep 23 22:05 03-r.Rmd
-    ## -rw-r--r-- 1 1001 121  188 Sep 23 22:05 README.md
+    ## total 24K
+    ## -rw-r--r-- 1 1001 121 4.6K Oct 18 21:58 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2.2K Oct 18 21:58 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121 2.9K Oct 18 21:58 03-r.Rmd
+    ## -rw-r--r-- 1 1001 121 2.0K Oct 18 21:58 04-users.Rmd
+    ## -rw-r--r-- 1 1001 121  188 Oct 18 21:58 README.md
 
 That way the most recently modified elements will show up on the top.
 
