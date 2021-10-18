@@ -1,11 +1,11 @@
 files <- list.files("sources", full.names = TRUE, pattern = "*.Rmd")
 for (f in files) {
 
-    # Getting hash
-    hash <- system2("git", c("diff", files[1]), stdout = TRUE)
+    # # Getting hash
+    # hash <- system2("git", c("diff", files[1]), stdout = TRUE)
 
-    if (!length(hash))
-      next
+    # if (!length(hash))
+    #   next
 
     rmarkdown::render(
       input = f,
