@@ -12,6 +12,8 @@ Knowing how to use the [**command-line interface (CLI)**](https://en.wikipedia.o
 
 3. R ([link](03-r.md))
 
+4. Users and Groups ([link](04-users.md))
+
 
 ## Other CLI cheat sheets
 
