@@ -96,11 +96,11 @@ ls -l /home/george/sources
 ```
 
     ## total 24
-    ## -rw-r--r-- 1 1001 121 4685 Oct 18 21:58 01-fundamentals.Rmd
-    ## -rw-r--r-- 1 1001 121 2251 Oct 18 21:58 02-git.Rmd
-    ## -rw-r--r-- 1 1001 121 2892 Oct 18 21:58 03-r.Rmd
-    ## -rw-r--r-- 1 1001 121 2000 Oct 18 21:58 04-users.Rmd
-    ## -rw-r--r-- 1 1001 121  188 Oct 18 21:58 README.md
+    ## -rw-r--r-- 1 1001 121 4685 Jul 22 14:36 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2251 Jul 22 14:36 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121 2892 Jul 22 14:36 03-r.Rmd
+    ## -rw-r--r-- 1 1001 121 2000 Jul 22 14:36 04-users.Rmd
+    ## -rw-r--r-- 1 1001 121  188 Jul 22 14:36 README.md
 
 I like listing files by timestamp and adding the `-t` flag, and make the
 size of the files “human-readable” with the `-h` flag:
@@ -110,11 +110,11 @@ ls -lth /home/george/sources
 ```
 
     ## total 24K
-    ## -rw-r--r-- 1 1001 121 4.6K Oct 18 21:58 01-fundamentals.Rmd
-    ## -rw-r--r-- 1 1001 121 2.2K Oct 18 21:58 02-git.Rmd
-    ## -rw-r--r-- 1 1001 121 2.9K Oct 18 21:58 03-r.Rmd
-    ## -rw-r--r-- 1 1001 121 2.0K Oct 18 21:58 04-users.Rmd
-    ## -rw-r--r-- 1 1001 121  188 Oct 18 21:58 README.md
+    ## -rw-r--r-- 1 1001 121 4.6K Jul 22 14:36 01-fundamentals.Rmd
+    ## -rw-r--r-- 1 1001 121 2.2K Jul 22 14:36 02-git.Rmd
+    ## -rw-r--r-- 1 1001 121 2.9K Jul 22 14:36 03-r.Rmd
+    ## -rw-r--r-- 1 1001 121 2.0K Jul 22 14:36 04-users.Rmd
+    ## -rw-r--r-- 1 1001 121  188 Jul 22 14:36 README.md
 
 That way the most recently modified elements will show up on the top.
 
